@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"
+    <title>Music Player Team 1</title>
+    <link rel="stylesheet" href="style2.css">
+    <script src="https://kit.fontawesome.com/4dc4625883.js" crossorigin="anonymous"></script>
+
+</head>
+<body>
+<div class="container">
+    <div class="music-player">
+    <nav>
+        <div class="menu">
+            <i class="fa-regular fa-circle-left"></i>
+        </div>
+        <div class="menu">
+            <i class="fa-solid fa-bars"></i>
+        </div>
+    </nav>
+    <img src="media/cover.png"  class="song-img">
+    <h1>Song Title</h1>
+    <p>Artist Name ft. Team 1</p>
+
+    <audio controls>
+        <source src="media/song1.mp3" type="audio/mpeg">
+    </audio>
+    <input type="range" value="0" id="tracking">
+
+    <div class="controls">
+        <div><i class="fa-solid fa-circle-chevron-left"></i></div>
+        <div><i class="fa-brands fa-google-play"></i></div>
+        <div><i class="fa-solid fa-circle-chevron-left fa-rotate-180"></i></div>
+    </div>
+
+
+    </div>
+</div>
+
+<script>
+
+    let tracking = document.getElementById("tracking");
+    let song = document.getElementById("tracking");
+    let ctrl = document.getElementById("tracking");
+
+
+</script>
+
+
+</body>
+</html>
