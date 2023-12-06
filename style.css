@@ -45,6 +45,9 @@ nav .menu{
     
     height: 220px;
     width: 220px;
+    background-image: url('/media/c2.png');
+    background-size: cover;
+    background-position: center;
     border-radius: 10%;
     border: 5px solid #fff;
     box-shadow: 0 10px 60px rgba(106, 26, 255, 0.22);
@@ -109,6 +112,7 @@ nav .menu{
     box-shadow: 0 5px 15px rgba(106, 26, 255, 0.22);
     cursor: pointer;
 }
+
 
 .controls div:nth-child(2){
     transform: scale(1.5);
