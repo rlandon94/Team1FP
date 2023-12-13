@@ -29,3 +29,5 @@ app.post('/upload', upload.single('songFile'), (req, res) => {
 app.listen(port, () => {
   console.log(`Server is running at http://localhost:${port}`);
 });
+
+app.use(express.static(path.join(__dirname, 'public')));
