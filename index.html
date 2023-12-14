@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script src="https://kit.fontawesome.com/4dc4625883.js" crossorigin="anonymous"></script>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css"
+      integrity="sha512-MV7K8+y+gLIBoVD59lQIYicR65iaqukzvf/nwasF0nqhPay5w/9lJmVM2hMDcnK1OnMGCdVK+iQrJ7lzPJQd1w=="
+      crossorigin="anonymous"
+    />
+    <link rel="stylesheet" href="style.css" />
+    <title>Team 1 Project</title>
+  </head>
+
+  <body>
+    <div class="screen">
+      <div class="top">
+        <i class="fas fa-bars menu-btn"></i>  <!-- menu button-->
+        <i class="fas fa-sharp fa-solid fa-gears" id="options"></i> 
+      </div>
+
+      <div class="coverImage"></div>
+      <div class="bodyPlayer"></div>
+
+      <div class="list-wrapper">
+        <table class="list" id="playlist">
+          <tr class="song">
+            <td class="nr">
+              <h5>1</h5>
+            </td>
+            <td class="title">
+              <h6>Music Player Project</h6>
+            </td>
+            <td class="length">
+              <h5>4:10</h5>
+            </td>
+            <td>
+              <i class="fas fa-heart"></i>      <!-- heart? button-->
+            </td>
+          </tr>
+        </table>
+      </div>
+
+      <div class="bar">
+        <div class="dot"></div>
+        <div class="time">
+          <h5 class="current-time">0:00</h5>
+          <h5 class="duration">4:10</h5>
+        </div>
+      </div>
+
+      <div class="info">
+        <h2>Music Player Project</h2>
+        <h3>SDEV265 - Team 1</h3>
+      </div>
+
+      <div class="controls">
+        <i class="fa-solid fa-circle-chevron-left" id="prev"></i>   <!-- back button-->
+        <i class="fa-brands fa-google-play" id="playpause"></i>    <!-- play button-->
+        <i class="fa-solid fa-circle-chevron-left fa-rotate-180" id="next"></i>      <!-- forward button-->
+        
+        <!-- <i class="fa-solid fa-pause"></i> Trying to get this to only show when play has been clicked-->
+      </div>
+
+      <div class="more-controls">
+        <i class="fas fa-heart" id="current-favorite"></i>   <!-- heart button-->
+        <i class="fas fa-random" id="shuffle"></i>        <!-- shuffle button-->
+        <i class="fas fa-repeat" id="repeat"></i>         <!-- repeat button-->
+        
+      </div>
+
+      <div class="current">title</div>
+    </div>
+
+    <script src="app.js"></script>
+  </body>
+</html>
