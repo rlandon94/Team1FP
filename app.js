@@ -260,3 +260,16 @@ function setProgress(e) {
 }
 
 progressBar.addEventListener("click", setProgress);
+
+optionsBtn.addEventListener('click', () => {
+  const currentSongIndex = currentSong;
+
+  const infoWindow = window.open('', 'additionalInfoWindow', 'width=400,height=300');
+
+  infoWindow.document.body.innerHTML = `
+    <h2>Additional Information</h2>
+    <p>Song: ${songs[currentSongIndex].title}</p>
+    <p>Artist: ${songs[currentSongIndex].artist}</p>
+    <!-- Add more information as needed -->
+  `;
+});

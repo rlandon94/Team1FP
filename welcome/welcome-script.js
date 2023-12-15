@@ -7,3 +7,4 @@ function enterMusicPlayer() {
     window.location.href = '../index.html';
   }
   
+  
