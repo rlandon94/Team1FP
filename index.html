@@ -16,10 +16,28 @@
   </head>
 
   <body>
+    <script>
+      document.addEventListener('DOMContentLoaded', function () {
+        // Check if the flag is set to redirect
+        const shouldRedirectToWelcome = localStorage.getItem('redirectToWelcome');
+
+        if (shouldRedirectToWelcome) {
+          // If the flag is set, redirect to the welcome screen
+          console.log('Redirecting to welcome/welcome.html');
+          window.location.href = 'welcome/welcome.html';
+        } else {
+          console.log('Already visited the welcome screen');
+        }
+
+        // Set the flag to redirect in case the user visits the welcome screen again
+        localStorage.setItem('redirectToWelcome', true);
+      });
+    </script>
+
     <div class="screen">
       <div class="top">
-        <i class="fas fa-bars menu-btn"></i>  <!-- menu button-->
-        <i class="fas fa-sharp fa-solid fa-gears" id="options"></i> 
+        <i class="fas fa-bars menu-btn"></i> <!-- menu button-->
+        <i class="fas fa-sharp fa-solid fa-gears" id="options"></i>
       </div>
 
       <div class="coverImage"></div>
@@ -38,7 +56,7 @@
               <h5>4:10</h5>
             </td>
             <td>
-              <i class="fas fa-heart"></i>      <!-- heart? button-->
+              <i class="fas fa-heart"></i> <!-- heart? button-->
             </td>
           </tr>
         </table>
@@ -58,18 +76,17 @@
       </div>
 
       <div class="controls">
-        <i class="fa-solid fa-circle-chevron-left" id="prev"></i>   <!-- back button-->
-        <i class="fa-brands fa-google-play" id="playpause"></i>    <!-- play button-->
-        <i class="fa-solid fa-circle-chevron-left fa-rotate-180" id="next"></i>      <!-- forward button-->
-        
+        <i class="fa-solid fa-circle-chevron-left" id="prev"></i> <!-- back button-->
+        <i class="fa-brands fa-google-play" id="playpause"></i> <!-- play button-->
+        <i class="fa-solid fa-circle-chevron-left fa-rotate-180" id="next"></i> <!-- forward button-->
+
         <!-- <i class="fa-solid fa-pause"></i> Trying to get this to only show when play has been clicked-->
       </div>
 
       <div class="more-controls">
-        <i class="fas fa-heart" id="current-favorite"></i>   <!-- heart button-->
-        <i class="fas fa-random" id="shuffle"></i>        <!-- shuffle button-->
-        <i class="fas fa-repeat" id="repeat"></i>         <!-- repeat button-->
-        
+        <i class="fas fa-heart" id="current-favorite"></i> <!-- heart button-->
+        <i class="fas fa-random" id="shuffle"></i> <!-- shuffle button-->
+        <i class="fas fa-repeat" id="repeat"></i> <!-- repeat button-->
       </div>
 
       <div class="current">title</div>
