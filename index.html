@@ -18,21 +18,21 @@
   <body>
     <script>
       document.addEventListener('DOMContentLoaded', function () {
-        // Check if the flag is set to redirect
-        const shouldRedirectToWelcome = localStorage.getItem('redirectToWelcome');
-
-        if (shouldRedirectToWelcome) {
-          // If the flag is set, redirect to the welcome screen
+        // Check if the user has already visited the welcome screen
+        const hasVisitedWelcomeScreen = localStorage.getItem('visitedWelcomeScreen');
+    
+        console.log('hasVisitedWelcomeScreen:', hasVisitedWelcomeScreen);
+    
+        if (!hasVisitedWelcomeScreen) {
+          // If not visited, redirect to the welcome screen
           console.log('Redirecting to welcome/welcome.html');
           window.location.href = 'welcome/welcome.html';
         } else {
           console.log('Already visited the welcome screen');
         }
-
-        // Set the flag to redirect in case the user visits the welcome screen again
-        localStorage.setItem('redirectToWelcome', true);
       });
     </script>
+    
 
     <div class="screen">
       <div class="top">
