@@ -1,77 +1,97 @@
-<!DOCTYPE html>
-<html>
-<head>
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Music Player Team 1</title>
-    <link rel="stylesheet" href="style2.css">
+
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <script src="https://kit.fontawesome.com/4dc4625883.js" crossorigin="anonymous"></script>
-</head>
-<body>
-    <div class="container">
-        <div class="music-player">
-            <nav>
-                <div class="menu">
-                    <i class="fa-regular fa-circle-left"></i>
-                </div>
-                <div class="menu">
-                    <i class="fa-solid fa-bars"></i>
-                </div>
-            </nav>
-            <img src="media/cover.png" class="song-img">
-            <h1>Song Title</h1>
-            <p>Artist Name ft. Team 1</p>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css"
+      integrity="sha512-MV7K8+y+gLIBoVD59lQIYicR65iaqukzvf/nwasF0nqhPay5w/9lJmVM2hMDcnK1OnMGCdVK+iQrJ7lzPJQd1w=="
+      crossorigin="anonymous"
+    />
+    <link rel="stylesheet" href="style.css" />
+    <title>Team 1 Project</title>
+  </head>
 
-            <audio controls id="audioPlayer">
-                <source src="media/song1.mp3" type="audio/mpeg">
-            </audio>
-            <input type="range" value="0" id="tracking" min="0" step="1">
+  <body>
+    <script>
+      document.addEventListener('DOMContentLoaded', function () {
+        // Check if the user has already visited the welcome screen
+        const hasVisitedWelcomeScreen = localStorage.getItem('visitedWelcomeScreen');
+    
+        console.log('hasVisitedWelcomeScreen:', hasVisitedWelcomeScreen);
+    
+        if (!hasVisitedWelcomeScreen) {
+          // If not visited, redirect to the welcome screen
+          console.log('Redirecting to welcome/welcome.html');
+          window.location.href = 'welcome/welcome.html';
+        } else {
+          console.log('Already visited the welcome screen');
+        }
+      });
+    </script>
+    
 
-            <div class="controls">
-                <div><i class="fa-solid fa-circle-chevron-left"></i></div>
-                <div><i class="fa-brands fa-google-play" id="playPauseButton"></i></div>
-                <div><i class="fa-solid fa-circle-chevron-left fa-rotate-180"></i></div>
-            </div>
+    <div class="screen">
+      <div class="top">
+        <i class="fas fa-bars menu-btn"></i> <!-- menu button-->
+        <i class="fas fa-sharp fa-solid fa-gears" id="options"></i>
+      </div>
+
+      <div class="coverImage"></div>
+      <div class="bodyPlayer"></div>
+
+      <div class="list-wrapper">
+        <table class="list" id="playlist">
+          <tr class="song">
+            <td class="nr">
+              <h5>1</h5>
+            </td>
+            <td class="title">
+              <h6>Music Player Project</h6>
+            </td>
+            <td class="length">
+              <h5>4:10</h5>
+            </td>
+            <td>
+              <i class="fas fa-heart"></i> <!-- heart? button-->
+            </td>
+          </tr>
+        </table>
+      </div>
+
+      <div class="bar">
+        <div class="dot"></div>
+        <div class="time">
+          <h5 class="current-time">0:00</h5>
+          <h5 class="duration">4:10</h5>
         </div>
+      </div>
+
+      <div class="info">
+        <h2>Music Player Project</h2>
+        <h3>SDEV265 - Team 1</h3>
+      </div>
+
+      <div class="controls">
+        <i class="fa-solid fa-circle-chevron-left" id="prev"></i> <!-- back button-->
+        <i class="fa-brands fa-google-play" id="playpause"></i> <!-- play button-->
+        <i class="fa-solid fa-circle-chevron-left fa-rotate-180" id="next"></i> <!-- forward button-->
+
+        <!-- <i class="fa-solid fa-pause"></i> Trying to get this to only show when play has been clicked-->
+      </div>
+
+      <div class="more-controls">
+        <i class="fas fa-heart" id="current-favorite"></i> <!-- heart button-->
+        <i class="fas fa-random" id="shuffle"></i> <!-- shuffle button-->
+        <i class="fas fa-repeat" id="repeat"></i> <!-- repeat button-->
+      </div>
+
+      <div class="current">title</div>
     </div>
 
-    <script>
-        let tracking = document.getElementById("tracking");
-        let song = document.getElementById("audioPlayer");
-        let playPauseButton = document.getElementById("playPauseButton");
-        let ctrl = document.querySelector(".controls");
-
-        playPauseButton.addEventListener("click", function () {
-            if (song.paused) {
-                song.play();
-                playPauseButton.classList.remove("fa-google-play");
-                playPauseButton.classList.add("fa-pause");
-            } else {
-                song.pause();
-                playPauseButton.classList.remove("fa-pause");
-                playPauseButton.classList.add("fa-google-play");
-            }
-        });
-
-        // Set the maximum value of the progress bar to the duration of the audio file
-        song.addEventListener("loadedmetadata", function () {
-            tracking.max = song.duration;
-        });
-
-        song.addEventListener("timeupdate", function () {
-            tracking.value = song.currentTime;
-        });
-
-        tracking.addEventListener("input", function () {
-            song.currentTime = tracking.value;
-        });
-
-        document.querySelector(".fa-circle-chevron-left").addEventListener("click", function () {
-             song.currentTime -= 5; // Move backward by 5 seconds
-         });
-
-         document.querySelector(".fa-circle-chevron-left.fa-rotate-180").addEventListener("click", function () {
-             song.currentTime += 5; // Move forward by 5 seconds
-         });
-    </script>
-</body>
+    <script src="app.js"></script>
+  </body>
 </html>
