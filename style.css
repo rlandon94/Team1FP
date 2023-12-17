@@ -1,7 +1,9 @@
+/* Root level variables */
 :root {
   --primary-color: #333;
 }
 
+/* Styles for the scrollbar */
 ::-webkit-scrollbar {
   width: 3px;
   height: 3px;
@@ -17,21 +19,25 @@
   background: #333;
 }
 
+/* Global styles for all elements */
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
   font-family: 'Poppins', sans-serif;
 }
+
+/* Body styles */
 body {
   min-height: 100vh;
   color: #9c60fc;
-  background-color:#333;
+  background-color: #333;
   display: flex;
   align-items: center;
   justify-content: center;
 }
 
+/* Main screen container */
 .screen {
   background-color: #000000;
   padding: 0;
@@ -43,6 +49,7 @@ body {
   border-radius: 10px;
 }
 
+/* Styles for clickable icons */
 i {
   cursor: pointer;
   transition: color 0.3s ease-in;
@@ -52,9 +59,10 @@ i:hover {
   color: #ffd375;
 }
 i.active {
-  color: #9c60fc
+  color: #9c60fc;
 }
 
+/* Top section styles */
 .top {
   width: 100%;
   position: absolute;
@@ -70,8 +78,9 @@ i.active {
   color: #ffffff;
 }
 
+/* Cover image styles */
 .coverImage {
-  background: url("media/1.jpg") no-repeat; 
+  background: url("media/1.jpg") no-repeat;
   border: 5px solid #fff;
   background-position: center;
   width: 220px;
@@ -83,7 +92,6 @@ i.active {
   transform-origin: 0% 0%;
   transition: all 0.3s ease-in;
 }
-
 .screen.active .coverImage {
   transform: scale(0.251, 0.251);
   left: 23px;
@@ -92,6 +100,7 @@ i.active {
   border-radius: 20px;
 }
 
+/* Body player styles */
 .bodyPlayer {
   position: absolute;
   top: 366px;
@@ -101,13 +110,14 @@ i.active {
   background: #111;
   transition: all 0.3s ease-in;
 }
-
 .screen.active .bodyPlayer {
   height: 470px;
   left: 0;
   top: 180px;
   transition: all 0.3s ease-in;
 }
+
+/* Playlist styles */
 .list-wrapper {
   height: 425px;
   overflow: auto;
@@ -165,6 +175,7 @@ i.active {
   animation-delay: 0.185s;
 }
 
+/* Progress bar styles */
 .bar {
   position: relative;
   width: 320px;
@@ -177,7 +188,6 @@ i.active {
   transform-origin: 0% 0%;
   transition: all 0.3s ease-in;
 }
-
 .screen.active .bar {
   top: 119px;
   left: 126px;
@@ -213,6 +223,7 @@ i.active {
   transition: all 0.3s ease-in;
 }
 
+/* Information styles */
 .info {
   position: absolute;
   left: 50%;
@@ -231,7 +242,6 @@ i.active {
   color: #ffffff;
   transition: all 0.3s ease-in;
 }
-
 .screen.active .info {
   top: 66px;
   left: 126px;
@@ -240,6 +250,7 @@ i.active {
   color: #ffffff;
 }
 
+/* Controls styles */
 .controls {
   display: flex;
   gap: 20px;
@@ -272,6 +283,7 @@ i.active {
   transition: all 0.3s ease-in;
 }
 
+/* More controls styles */
 .more-controls {
   color: #ffffff;
   font-size: 15px;
@@ -287,11 +299,11 @@ i.active {
   z-index: 20;
   transition: bottom 0.3s linear;
 }
-
 .screen.active .more-controls {
   bottom: -60px;
 }
 
+/* Current song display styles */
 .current {
   position: absolute;
   right: 23px;
@@ -299,9 +311,15 @@ i.active {
   bottom: -60px;
   transition: all 0.3s ease-in;
 }
-
 .screen.active .current {
   bottom: 10px;
   transition: all 0.3s ease-in;
 }
 
+/* Animation for table row */
+@keyframes harlem {
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
