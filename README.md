@@ -4,5 +4,5 @@ Follow the steps to properly install and run the application:
 Download the zip file containing the code. 
 Extract all contained files into your desired location.
 Open the file on your chosen IDE. You can do this by opening the IDE and selecting the decompressed folder.
-Run the index.html file. You can do this by opening up a new terminal and typing “start index.html” into the terminal line. 
+Run the welcome.html file. You can do this by opening up a new terminal and typing “start welcome.html” into the terminal line. 
 Congrats! You have successfully started the application!
