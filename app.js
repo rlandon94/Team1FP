@@ -16,6 +16,7 @@ const menuBtn = document.querySelector(".menu-btn"),
   currentTimeEl = document.querySelector(".current-time"),
   durationEl = document.querySelector(".duration");
 
+// Initializing variables
 let playing = false,
   currentSong = 0,
   favorites = [],
@@ -24,10 +25,12 @@ let playing = false,
   interval = null;
 audio = new Audio();
 
+// Adding event listener for menu button click
 menuBtn.addEventListener("click", () => {
   screen.classList.toggle("active");
 });
 
+// Sample songs data
 const songs = [
   {
     title: "Song 1 SDEV265",
@@ -41,8 +44,21 @@ const songs = [
     img_src: "2.jpg",
     src: "2.mp3",
   },
+  {
+    title: "Song 3 SDEV265",
+    artist: "Team 1",
+    img_src: "3.jpg",
+    src: "3.mp3",
+  },
+  {
+    title: "Song 4 SDEV265",
+    artist: "Team 1",
+    img_src: "4.jpg",
+    src: "4.mp3",
+  },
 ];
 
+// Function to initialize the music player
 function init() {
   addToList(songs);
   loadSong(currentSong);
@@ -99,8 +115,10 @@ function addToList(songs) {
   });
 }
 
+// Initializing the music player
 init();
 
+// Function to load a specific song
 function loadSong(num) {
   coverImage.style.backgroundImage = `url(media/${songs[num].img_src})`;
   infoWrapper.innerHTML = `
@@ -117,6 +135,7 @@ function loadSong(num) {
   progress();
 }
 
+// Function to play the next song
 function nextSong() {
   if (shuffle) {
     shuffleFunc();
@@ -134,6 +153,7 @@ function nextSong() {
   }
 }
 
+// Function to play the previous song
 function prevSong() {
   if (shuffle) {
     shuffleFunc();
@@ -151,6 +171,7 @@ function prevSong() {
   }
 }
 
+// Event listener for play/pause button click
 playPause.addEventListener("click", () => {
   if (playing) {
     playPause.classList.replace("fa-pause", "fa-google-play");
@@ -162,9 +183,15 @@ playPause.addEventListener("click", () => {
     audio.play();
   }
 });
+
+
+// Event listener for next button click
 next.addEventListener("click", nextSong);
+
+// Event listener for previous button click
 prev.addEventListener("click", prevSong);
 
+// Function to add or remove a song from favorites
 function addToFavorites(index) {
   if (favorites.includes(index)) {
     favorites = favorites.filter((item) => item !== index);
@@ -178,11 +205,13 @@ function addToFavorites(index) {
   addToList(songs);
 }
 
+// Event listener for favorite button click
 CurrentFavorite.addEventListener("click", () => {
   addToFavorites(currentSong);
   CurrentFavorite.classList.toggle("active");
 });
 
+// Function to shuffle the songs
 function shuffleFunc() {
   if (shuffle) {
     currentSong = Math.floor(Math.random() * songs.length);
@@ -191,11 +220,13 @@ function shuffleFunc() {
   }
 }
 
+// Function to toggle shuffle mode
 function shuffleSongs() {
   shuffle = !shuffle;
   shuffleBtn.classList.toggle("active");
 }
 
+// Function to toggle repeat mode
 function repeatSongs() {
   if (repeat === 1) {
     repeat = 2;
@@ -209,9 +240,13 @@ function repeatSongs() {
   }
 }
 
+// Event listener for shuffle button click
 shuffleBtn.addEventListener("click", shuffleSongs);
+
+// Event listener for repeat button click
 repeatBtn.addEventListener("click", repeatSongs);
 
+// Event listener for audio playback end
 audio.addEventListener("ended", () => {
   if (repeat === 1) {
     loadSong(currentSong);
@@ -231,6 +266,7 @@ audio.addEventListener("ended", () => {
   }
 });
 
+// Function to update the progress bar during playback
 function progress() {
   let { duration, currentTime } = audio;
   isNaN(duration) ? (duration = 0) : duration;
@@ -243,6 +279,7 @@ function progress() {
   progressDot.style.left = `${progressPercent}%`;
 }
 
+// Event listener for updating the progress bar on click
 function formatTime(time) {
   let minutes = Math.floor(time / 60);
   let seconds = Math.floor(time % 60);
@@ -261,6 +298,7 @@ function setProgress(e) {
 
 progressBar.addEventListener("click", setProgress);
 
+// Event listener for options button click
 optionsBtn.addEventListener('click', () => {
   const currentSongIndex = currentSong;
 
